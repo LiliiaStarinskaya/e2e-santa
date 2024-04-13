@@ -1,0 +1,6 @@
+{
+    "notice":".picture-notice__title",
+    "lotterySubmitLink":"a > .txt-secondary--med",
+    "lotterySubmitButton":".heading__right > .btn-main",
+    "secondSubmitButton":".santa-modal_content_buttons > .btn-main"
+}

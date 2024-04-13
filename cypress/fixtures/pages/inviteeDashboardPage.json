@@ -1,3 +1,4 @@
 {
-  "noticeForInvitee": ".picture-notice__title"
+  "noticeForInvitee": ".picture-notice__title",
+  "inviteCard": "a > .user-card"
 }

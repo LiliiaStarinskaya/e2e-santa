@@ -2,6 +2,8 @@
   "arrowRight": ".btn-arrow-right",
   "submitButton": ".btn-main",
   "boxesButton": ".layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href=\"/account/boxes\"] > .header-item",
-  "boxMenu":".toggle-menu"
+  "boxMenu":".toggle-menu",
+  "gearIcon":      ".layout-1__header-wrapper-fixed > .layout-1__header-secondary > .header-secondary > .header-secondary__right-item > .toggle-menu-wrapper > .toggle-menu-button > .toggle-menu-button--inner"
+
   }
   

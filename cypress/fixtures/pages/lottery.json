@@ -2,5 +2,7 @@
     "notice":".picture-notice__title",
     "lotterySubmitLink":"a > .txt-secondary--med",
     "lotterySubmitButton":".heading__right > .btn-main",
-    "secondSubmitButton":".santa-modal_content_buttons > .btn-main"
+    "secondSubmitButton":".santa-modal_content_buttons > .btn-main",
+    "lotterySidebarButton":".layout-1__header-wrapper-fixed > .layout-1__header-secondary__menu > .header-secondary-menu > .organizer-menu > .organizer-menu__wrapper > :nth-child(2)"
+
 }

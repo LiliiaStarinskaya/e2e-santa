@@ -3,7 +3,8 @@
   "sixthIcon": ":nth-child(6) > .picture_svg_wrapper",
   "giftPriceToggle": "input[type=\"checkbox\"]",
   "maxAmount": ".MuiGrid-grid-xs-5 .frm",
-  "currency": ".MuiGrid-grid-xs-7 .frm"
+  "currency": ".MuiGrid-grid-xs-7 .frm",
+  "boxElement":":nth-child(1) > a.base--clickable > .user-card"
 }
 
 

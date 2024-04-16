@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "cypress.config.js",
+  
+  
   "scripts": {
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "clear-cache": "rm -rf node_modules/.cache/cypress"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.7.0",
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.3",
     "@faker-js/faker": "^7.6.0"
+  },
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.7.3",
+    "esbuild": "^0.20.2"
   }
 }

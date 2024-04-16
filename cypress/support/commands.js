@@ -39,7 +39,9 @@ Cypress.Commands.add("createUserCard", (wishes) => {
   cy.get(generalElements.arrowRight).click({ force: true });
   cy.get(inviteeBoxPage.wishesInput).type(wishes);
   cy.get(generalElements.arrowRight).click({ force: true });
+  cy.clearCookies();
 });
+
 Cypress.Commands.add("approveUser1", (inviteLink, users) => {
   cy.visit(inviteLink);
   cy.get(generalElements.submitButton).click();

@@ -66,18 +66,34 @@ Given("the user adds participants via link", () => {
     });
   cy.clearCookies();
 });
-When("the author adds the following users", (dataTable) => {
-  dataTable.hashes().forEach((row) => {
-    cy.get(invitePage.inviteeNameFieldFirst).type(row.name);
-    cy.get(invitePage.inviteeEmailFieldFirst).type(row.email);
-    cy.get(invitePage.inviteeNameFieldSecond).type(row.name);
-    cy.get(invitePage.inviteeEmailFieldSecond).type(row.email);
-    cy.get(invitePage.inviteeNameFieldThird).type(row.name);
-    cy.get(invitePage.inviteeEmailFieldThird).type(row.email);
-    cy.get(invitePage.button).click({ force: true });
-  });
-});
 
+// When("the author adds the following users", (dataTable) => {
+//   dataTable.hashes().forEach((row) => {
+//     cy.get(invitePage.inviteeNameFieldFirst).type(row.name);
+//     cy.get(invitePage.inviteeEmailFieldFirst).type(row.email);
+//     cy.get(invitePage.inviteeNameFieldSecond).type(row.name);
+//     cy.get(invitePage.inviteeEmailFieldSecond).type(row.email);
+//     cy.get(invitePage.inviteeNameFieldThird).type(row.name);
+//     cy.get(invitePage.inviteeEmailFieldThird).type(row.email);
+//     cy.get(invitePage.button).click({ force: true });
+//   });
+// });
+When(
+  "the author adds the following users {string} and {string}",
+  (name, email, dataTable) => {
+    const users = dataTable.hashes();
+
+    users.forEach((user) => {
+      cy.get(invitePage.inviteeNameFieldFirst).type(user.name);
+      cy.get(invitePage.inviteeEmailFieldFirst).type(user.email);
+      cy.get(invitePage.inviteeNameFieldSecond).type(user.name);
+      cy.get(invitePage.inviteeEmailFieldSecond).type(user.email);
+      cy.get(invitePage.inviteeNameFieldThird).type(user.name);
+      cy.get(invitePage.inviteeEmailFieldThird).type(user.email);
+      cy.get(invitePage.button).click({ force: true });
+    });
+  }
+);
 Then("the participants are successfully added", () => {
   cy.get(invitePage.messageField).should(
     "include",

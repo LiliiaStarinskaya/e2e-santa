@@ -67,33 +67,20 @@ Given("the user adds participants via link", () => {
   cy.clearCookies();
 });
 
-// When("the author adds the following users", (dataTable) => {
-//   dataTable.hashes().forEach((row) => {
-//     cy.get(invitePage.inviteeNameFieldFirst).type(row.name);
-//     cy.get(invitePage.inviteeEmailFieldFirst).type(row.email);
-//     cy.get(invitePage.inviteeNameFieldSecond).type(row.name);
-//     cy.get(invitePage.inviteeEmailFieldSecond).type(row.email);
-//     cy.get(invitePage.inviteeNameFieldThird).type(row.name);
-//     cy.get(invitePage.inviteeEmailFieldThird).type(row.email);
-//     cy.get(invitePage.button).click({ force: true });
-//   });
-// });
-When(
-  "the author adds the following users {string} and {string}",
-  (name, email, dataTable) => {
-    const users = dataTable.hashes();
+When("the author adds the following users", (dataTable) => {
+  const rows = dataTable.rawTable.slice(1);
+  const firstUser = rows[0];
+  cy.get(invitePage.inviteeNameFieldFirst).type(firstUser[0]);
+  cy.get(invitePage.inviteeEmailFieldFirst).type(firstUser[1]);
+  const secondUser = rows[1];
+  cy.get(invitePage.inviteeNameFieldSecond).type(secondUser[0]);
+  cy.get(invitePage.inviteeEmailFieldSecond).type(secondUser[1]);
+  const thirdUser = rows[2];
+  cy.get(invitePage.inviteeNameFieldThird).type(thirdUser[0]);
+  cy.get(invitePage.inviteeEmailFieldThird).type(thirdUser[1]);
+  cy.get(invitePage.button).click({ force: true });
+});
 
-    users.forEach((user) => {
-      cy.get(invitePage.inviteeNameFieldFirst).type(user.name);
-      cy.get(invitePage.inviteeEmailFieldFirst).type(user.email);
-      cy.get(invitePage.inviteeNameFieldSecond).type(user.name);
-      cy.get(invitePage.inviteeEmailFieldSecond).type(user.email);
-      cy.get(invitePage.inviteeNameFieldThird).type(user.name);
-      cy.get(invitePage.inviteeEmailFieldThird).type(user.email);
-      cy.get(invitePage.button).click({ force: true });
-    });
-  }
-);
 Then("the participants are successfully added", () => {
   cy.get(invitePage.messageField).should(
     "include",

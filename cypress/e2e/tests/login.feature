@@ -10,15 +10,15 @@ Feature: The user can create a box and run it
     Scenario: The user adds participants via link
         Given the user adds participants via link
 
-    # Feature: The author adds participants via table
 
-    #     Scenario: The author adds participants via table
-    #         When the author adds the following users
-    #             | name   | email                        |
-    #             | lilia  | starinskaya_29+test1@mail.ru |
-    #             | lilia2 | starinskaya_29+test2@mail.ru |
-    #             | lilia3 | starinskaya_29+test3@mail.ru |
-    #         Then the participants are successfully added
+
+    Scenario: The author adds participants via table
+        When the author adds the following users
+            | name   | email                        |
+            | lilia  | starinskaya_29+test1@mail.ru |
+            | lilia2 | starinskaya_29+test2@mail.ru |
+            | lilia3 | starinskaya_29+test3@mail.ru |
+        Then the participants are successfully added
 
     Scenario: Users approve a participation
         Given the participant is on the login page

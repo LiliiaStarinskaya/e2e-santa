@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-const users = require("../../users.json");
+const users = require("../../fixtures/users.json");
 const boxPage = require("../../fixtures/pages/boxPage.json");
 const generalElements = require("../../fixtures/pages/general.json");
 const dashboardPage = require("../../fixtures/pages/dashboardPage.json");

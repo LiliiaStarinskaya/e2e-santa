@@ -112,15 +112,19 @@ describe("user can create a box and run it", () => {
     cy.visit("/login");
     cy.login(users.userAutor.email, users.userAutor.password);
     cy.get(generalElements.boxesButton).click();
-    cy.contains(newBoxName).click({ force: true });
-    cy.get(lotteryPage.lotterySubmitLink).click({ force: true });
-    cy.get(lotteryPage.lotterySubmitButton).click();
+    cy.get(boxPage.boxElement).click();
+    cy.get(generalElements.gearIcon).click();
+    cy.get(lotteryPage.lotterySidebarButton).click({ forse: true });
+    cy.get(generalElements.submitButton).click();
     cy.get(lotteryPage.secondSubmitButton).click();
+
     cy.get(lotteryPage.notice)
       .invoke("text")
       .then((text) => {
         expect(text).to.contain("Жеребьевка проведена");
       });
+    cy.get(generalElements.gearIcon).click();
+    cy.contains("Проведена").should("exist");
     cy.clearCookies();
   });
 
